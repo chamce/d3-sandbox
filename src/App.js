@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default function App() {
+    const [tiles, setTiles] = useState([
+        {data: 'X'},
+        {data: 'X'},
+        {data: 'X'},
+        {data: 'X'},
+        {data: 'X'},
+        {data: 'X'},
+        {data: 'X'},
+        {data: 'X'},
+        {data: 'X'},
+    ]);
 
-export default App;
+    return (
+        <>
+            <div className='app container-fluid bg-danger d-flex align-items-center justify-content-center'>
+                <div className='row border border-3 border-dark rounded bg-white'>
+                    { tiles.map((tile, index) => <div className='col-4'>{tile.data}</div>) }
+                </div>
+            </div>
+        </>
+    );
+}
